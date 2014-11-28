@@ -1,4 +1,4 @@
-db.patient.find({firstName: 'Walter'})
+db.patient.find({firstName: 'Walter'});
 {
         "_id" : ObjectId("54786bc760b2c483b7a68d8c"),
         "_class" : "com.ruan.managecare.entities.peronalities.Patient",
