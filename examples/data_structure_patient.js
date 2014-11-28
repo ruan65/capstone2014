@@ -11,7 +11,7 @@ db.patient.find({firstName: 'Walter'})
         "gender" : "male",
         "deviceNotificationsId" : "APA91bFABxFnrmh-HryCCSEyxo97LC-KYtDUVX-OM6eX0eDYY9J4ChegG9TWnqS_R54zdOVMB2zqZDIDB3WEDvhTl_MRmmdxVCHefq2EXZw0fRfrfUBJCOxlyjvIl_9Z7xNik26A457O5oS13rNHcdPQ_5QPtJ_4vvDewlQQxuiday1MLhDu3UQ",
         "dateOfBirth" : ISODate("1964-03-06T21:00:00Z"),
-        "dob" : "1963-15-7",
+        "dob" : "1964-03-06",
         "checkIn" : {
                 "_id" : null,
                 "checked" : false,
