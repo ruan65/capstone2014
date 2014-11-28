@@ -44,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             try {
                 while (c.hasNext()) {
                     DBObject o = c.next();
-                    System.out.println(o);
+                    
                     auth
                             .inMemoryAuthentication()
                             .withUser(o.get("_id").toString())
