@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_q_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/btn_yes_q_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:text="YES"
+        android:textSize="30sp"
+        android:layout_below="@+id/tv_q_fragment"
+        android:layout_alignLeft="@+id/tv_q_fragment"
+        android:layout_alignStart="@+id/tv_q_fragment"
+        android:layout_marginLeft="66dp" />
+
+    <Button
+        android:id="@+id/btn_no_q_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_no"
+        android:textSize="30sp"
+        android:layout_marginRight="68dp"
+        android:layout_alignTop="@+id/btn_yes_q_fragment"
+        android:layout_alignRight="@+id/tv_q_fragment"
+        android:layout_alignEnd="@+id/tv_q_fragment" />
+
+
+</RelativeLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Check-In">
+
+        <CheckBoxPreference
+            android:checked="true"
+            android:defaultValue="true"
+            android:key="@string/pref_key_enable_alerts"
+            android:title="Enable Alerts" />
+
+        <ListPreference
+            android:defaultValue="5"
+            android:entries="@array/check_ins_per_day"
+            android:entryValues="@array/check_ins_per_day_value"
+            android:key="checkins_per_day"
+            android:title="Number Check-Ins per Day" />
+
+        <com.ruan.managecarenew.preferences.SetTimeDialogPrefs
+            android:defaultValue="480"
+            android:dialogIcon="@android:drawable/ic_menu_today"
+            android:dialogLayout="@layout/settings_dialog_time"
+            android:key="check_in_first"
+            android:negativeButtonText="@string/btn_cancel"
+            android:persistent="true"
+            android:positiveButtonText="@string/btn_ok"
+            android:summary="First Check-In pop-up time"
+            android:title="First Check-In" />
+
+        <com.ruan.managecarenew.preferences.SetTimeDialogPrefs
+            android:defaultValue="21"
+            android:dialogIcon="@android:drawable/ic_menu_today"
+            android:dialogLayout="@layout/settings_dialog_time"
+            android:key="check_in_last"
+            android:negativeButtonText="@string/btn_cancel"
+            android:persistent="true"
+            android:positiveButtonText="@string/btn_ok"
+            android:summary="Last Check-In pop-up time"
+            android:title="Last Check-In" />
+
+
+        <RingtonePreference
+            android:defaultValue="content://settings/system/notification_sound"
+            android:key="check_in_ringtone"
+            android:ringtoneType="notification"
+            android:showDefault="true"
+            android:showSilent="true"
+            android:title="Set Check-In Ringtone" />
+
+        <Preference
+            android:key="alerts"
+            android:title="Alerts" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

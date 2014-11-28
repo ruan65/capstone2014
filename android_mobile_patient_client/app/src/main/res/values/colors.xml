@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="btn_text">#C7C7C7</color>
+    <color name="btn_start">#B8757C</color>
+    <color name="btn_center">#B01826</color>
+    <color name="btn_end">#3B0507</color>
+    <color name="btn_stroke">#732212</color>
+    <color name="btn_sh">#CF8689</color>
+</resources>

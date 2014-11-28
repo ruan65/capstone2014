@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title></title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+
+    <!--************************ page content ************************************************-->
+
+    <h3>Add Medicament to Database</h3>
+
+    <form th:action="@{/newmedicament}" th:object="${medicament}" method="post" role="form" id="add">
+
+        <div class="form-group">
+            <h4>Pick a Type:
+                <select th:field="*{type}">
+                    <option
+                            th:each="tp : ${types}"
+                            th:value="${tp}"
+                            th:text="${tp}"></option>
+                </select></h4>
+        </div>
+
+        <div class="form-group">
+            <label for="code">Enter code:</label>
+            <input type="text" th:field="*{code}" class="form-control" id="code"
+                   placeholder="code:(ex.Ox-10mg)"/>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Enter Medicament:</label>
+            <input type="text" th:field="*{name}" class="form-control" id="name"
+                   placeholder="(ex.OxyContin)"/>
+        </div>
+
+    </form>
+
+    <a href="/medication">
+        <button class="btn btn-default">Cancel</button>
+    </a>
+    <button form="add" type="submit" class="btn btn-success">Submit</button>
+
+    <!--******************** end page content ************************************************-->
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

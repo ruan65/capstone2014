@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Add/Edit Patient</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="container">
+    <!--************************ page content ************************************************-->
+
+    <h3>Add/Update patient</h3>
+
+    <form th:action="@{'/add/' + ${patient._id}}" th:object="${patient}" method="post" role="form" id="add">
+
+        <div class="form-group">
+            <label for="mrn">Medical Record Number:</label>
+            <input th:field="*{mrn}" type="text" class="form-control" id="mrn" placeholder="Enter MRN (ex. MR-238-1071)"/>
+        </div>
+        <div class="form-group">
+            <label for="fname">First name:</label>
+            <input th:field="*{firstName}" type="text" class="form-control" id="fname" placeholder="Enter first name"/>
+        </div>
+        <div class="form-group">
+            <label for="lname">Last name:</label>
+            <input th:field="*{lastName}" type="text" class="form-control" id="lname" placeholder="Enter last name"/>
+        </div>
+
+        <div class="control-group" id="gender">
+            <div class="controls">
+                <label>Gender: </label>
+                <input th:field="*{gender}" id="fem" type="radio" value="female"/>
+                <label for="fem">&nbsp;&nbsp;&nbsp;&nbsp;<i>female |&nbsp;&nbsp;</i></label>
+                <input th:field="*{gender}" id="male" type="radio" value="male"/>
+                <label for="male"><i>&nbsp;&nbsp;&nbsp;&nbsp;male |&nbsp;&nbsp;</i></label>
+                <label for="age">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of birth:&nbsp;&nbsp;</label>
+                <input th:field="*{dob}" type="text" id="age" placeholder="YYYY-MM-DD"/>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="diag">Diagnosis:</label>
+            <input th:field="*{diagnosis}" class="form-control" type="text" id="diag" placeholder="Enter diagnosis"/>
+        </div>
+
+        <div class="form-group">
+            <label for="descr">Description:</label>
+            <textarea th:field="*{description}" class="form-control" rows="3" id="descr"
+                      placeholder="Enter short description"/>
+        </div>
+    </form>
+
+    <a href="/patients"><button class="btn btn-default">Cancel</button></a>
+    <button form="add" type="submit" class="btn btn-success">Submit</button>
+    <!--******************** end page content ************************************************-->
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B8B8B8"
+    android:orientation="vertical">
+
+    <Button
+
+        android:id="@+id/btn_main_checkin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/btn_checkin"
+        android:onClick="onClickCheckIn"
+        android:shadowColor="#17C69B"
+        android:shadowDx="10"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:text="@string/btn_checkin"
+        android:textColor="#C7C7C7"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/btn_doctor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/btn_sos"
+        android:onClick="onClickDoctor"
+        android:shadowColor="#B01826"
+        android:shadowDx="10"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:text="@string/btn_sos"
+        android:textColor="#B8B8B8"
+        android:textSize="30sp" />
+
+
+</LinearLayout>

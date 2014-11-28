@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title></title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+
+    <!--************************ page content ************************************************-->
+
+    <a href="/">Home</a>
+    <br/>
+    <a href="/category">Create new Question</a>
+
+    <h3>Category: <i th:text="${category}"></i></h3>
+
+    <h3>Subcategory: <i th:text="${sub_category}"></i></h3>
+
+    <div class="row-fluid">
+        <div class="span9">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tag</th>
+                    <th>Question</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>Questions:</td>
+                </tr>
+
+                <tr th:each="item,status : ${questions}">
+
+                        <td width="10%" th:text="${status.count}"></td>
+                        <td width="15%" th:text="${item.code}"></td>
+                        <td width="65%" th:text="${item.text}"></td>
+                    <td width="10%">
+                        <div class="btn-group dropup">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+                                <li><a th:href="@{'/crchin'(qid=${item._id}, id=${patient._id}, qtype='sq')}">Add to CheckIn</a></li>
+
+                                <li class="divider"></li>
+
+                                <li><a th:href="@{'/newq'(qid=${item._id})}">Update Question</a></li>
+                            </ul>
+                        </div>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>Multiple choice questions:</td>
+                </tr>
+
+                <tr th:each="item,status : ${mch_questions}">
+
+                    <td width="10%" th:text="${status.count}"></td>
+                    <td width="15%" th:text="${item.code}"></td>
+                    <td width="65%" th:text="${item.text}"></td>
+                    <td width="10%">
+                        <div class="btn-group dropup">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+                                <li><a th:href="@{'/crchin'(qid=${item._id}, id=${patient._id}, qtype='mchq')}">Add to CheckIn</a></li>
+
+                                <li class="divider"></li>
+
+                                <li><a th:href="@{'/newq'(qid=${item._id})}">Update Question</a></li>
+                            </ul>
+                        </div>
+                    </td>
+
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--******************** end page content ************************************************-->
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

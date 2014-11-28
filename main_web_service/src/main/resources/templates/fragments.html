@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+
+<!--FRAGMENT CATEGORY-->
+
+<div th:fragment="pick_category">
+
+    <h3>
+        <select th:name="categ" onchange="this.form.submit()">
+            <option><u>Pick a Category</u></option>
+            <option
+                    th:each="sc : ${categories}"
+                    th:value="${sc}"
+                    th:text="${sc}">
+            </option>
+        </select>
+    </h3>
+
+</div>
+
+<!--FRAGMENT SUB_CATEGORY-->
+
+<div th:fragment="pick_subcategory">
+
+    <h3>Category: <i th:text="${category}"></i></h3>
+
+    <h3>
+        <input type="hidden" name="categ" th:value="${category}"/>
+        <select th:name="s_categ" onchange="this.form.submit()">
+            <option><u>Pick a Subcategory</u></option>
+            <option
+                    th:each="sc : ${sCategory}"
+                    th:value="${sc}"
+                    th:text="${sc}">
+            </option>
+        </select>
+    </h3>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<config
+    linePaint.strokeWidth="3dp"
+    linePaint.color="#0000AA"
+    vertexPaint.color="#000077"
+    fillPaint.color="#00000000"
+    pointLabelFormatter.textPaint.color="#FFFFFF"/>
